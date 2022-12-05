@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Django Test Project</title>
+	<style>
+		.wrapper {
+			box-shadow: hsl(0, 0%, 80%) 0 0 16px;
+			background: #8FFFF0;
+			border-radius: 8px;
+			padding: 5%;
+			margin: 10%;
+		}
+		.title {
+			font-weight: 500;
+			font-size: 1.2em;
+			text-align: center;
+			margin: 1em 0;
+		}
+		.nav {
+			display: flex;
+			justify-content: flex-start;
+		}
+		.nav a {
+			margin: 0 10px;
+			color: red;
+		}
+		.contents {
+			margin: 30px 0;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="wrapper">
+		<legend class="title">Test Models</legend>
+		<div class="nav">
+			<a href="{% url 'index' %}">all</a>
+			<a href="{% url 'index' %}?q=active">active</a>
+			<a href="{% url 'index' %}?q=inactive">inactive</a>
+		</div>
+		<div class="contents">
+			<ul>
+			{% for obj in test_models %}
+				<li>{{ obj }}</li>
+			{% endfor %}
+			</ul>
+		</div>
+	</div>
+
+</body>
+</html>
