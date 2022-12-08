@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		.wrapper {
+			margin: 2em 10%;
+		}
+		form {
+			width: 100%;
+		}
+		label {
+			display: block;
+			font-weight: 500;
+			font-size: 1.2em;
+			margin: 10px 0;
+		}
+		input[type="text"] {
+			width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+		}
+		#btn {
+			display: block;
+			padding: 5px 10px;
+			background: #fff;
+			border: 2px solid blue;
+			border-radius: 5px;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<form action="" method="post">
+		{% csrf_token %}
+			<label for="name">Name*</label>
+			{{ form.name }}
+			<label for="active">Active</label>
+			{{ form.active }}
+			<button id= "btn" type= "submit">Submit</button>
+		</form>
+	</div>
+</body>
+</html>

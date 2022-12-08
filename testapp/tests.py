@@ -27,3 +27,4 @@ class ViewTest(TestCase):
 		
 		""" Test that the correct template was rendered """
 		self.assertTrue(response.templates[0].name == "index.html")
+		
